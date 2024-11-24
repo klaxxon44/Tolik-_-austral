@@ -10,4 +10,5 @@ a = document.getElementById('myElement')
 a.addEventListener("click",function(){
     this.style.backgroundColor = getRandomColor();
 })
+// GG
 
