@@ -1,0 +1,23 @@
+.krytui_div {
+    border: 2px solid blue;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(43, 108, 169);
+    border-radius: 50%;
+    position: relative;
+    left: 40%;
+    margin-top: 30%;
+}
+
+#myElement {
+    margin-left: 45%;
+    border: 2px solid black;
+}
+
+#clickCounter {
+    margin-left: 50%
+}
+
+#myElement, #clickCounter {
+    
+}
