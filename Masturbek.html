@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increase and Decrease Size with Click Counter</title>
+    <style>
+        #myElement {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="myElement"></div>
+    <p> <span id="clickCounter">0</span></p>
+    <script>
+        let clickCount = 0;
+
+        document.getElementById("myElement").addEventListener("click", function() {
+            const element = this;
+            const currentWidth = parseInt(window.getComputedStyle(element).width);
+            const currentHeight = parseInt(window.getComputedStyle(element).height);
+            element.style.width = (currentWidth + 1) + "px";
+            element.style.height = (currentHeight + 1) + "px";
+
+            // Збільшення лічильника натискань
+            clickCount++;
+            document.getElementById("clickCounter").textContent = clickCount;
+        });
+
+        setInterval(function() {
+            const element = document.getElementById("myElement");
+            const currentWidth = parseInt(window.getComputedStyle(element).width);
+            const currentHeight = parseInt(window.getComputedStyle(element).height);
+            if (currentWidth > 1 && currentHeight > 1) { // Уникаємо негативних розмірів
+                element.style.width = (currentWidth - 1) + "px";
+                element.style.height = (currentHeight - 1) + "px";
+            }
+        }, 500); // Зменшення кожні 0,5 секунди
+    </script>
+
+</body>
+</html>
